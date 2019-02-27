@@ -1,4 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">ColorActivity</string>
     <string-array name="colorList">
@@ -14,15 +13,15 @@
         <item>DarkGray</item>
     </string-array>
     <string-array name="displayList">
-        <item>White</item>
-        <item>Blue</item>
-        <item>Red</item>
-        <item>Green</item>
-        <item>Yellow</item>
+        <item>Blanco</item>
+        <item>Azul</item>
+        <item>Rojo</item>
+        <item>Verde</item>
+        <item>Amarillo</item>
         <item>Magenta</item>
-        <item>Purple</item>
-        <item>Teal</item>
-        <item>Cyan</item>
-        <item>DarkGray</item>
+        <item>Púrpura</item>
+        <item>Trillo</item>
+        <item>Cian</item>
+        <item>GrisOscuro</item>
     </string-array>
 </resources>

@@ -12,21 +12,23 @@ import java.util.List;
 
 public class ColorAdapter extends BaseAdapter {
     Context c;
-    List<String> colorList;
+    String[] colorList;
+    String[] displayList;
 
-    public ColorAdapter(Context c, List<String> colorList) {
+    public ColorAdapter(Context c, String[] colorList, String[] displayList) {
         this.c = c;
         this.colorList = colorList;
+        this.displayList = displayList;
     }
 
     @Override
     public int getCount() {
-        return colorList.size();
+        return colorList.length;
     }
 
     @Override
     public Object getItem(int position) {
-        return colorList.get(position);
+        return colorList[position];
     }
 
     @Override
@@ -44,10 +46,12 @@ public class ColorAdapter extends BaseAdapter {
             view = new TextView(c);
         }
 
-        String setColor = colorList.get(position);
+        String setColorText = displayList[position];
+        String setColorBG = colorList[position];
 
-        view.setText(setColor);
-        view.setBackgroundColor(Color.parseColor(setColor));
+
+        view.setText(setColorText);
+        view.setBackgroundColor(Color.parseColor(setColorBG));
 
         return view;
     }

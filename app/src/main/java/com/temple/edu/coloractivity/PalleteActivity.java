@@ -1,6 +1,7 @@
 package com.temple.edu.coloractivity;
 
 import android.content.Intent;
+import android.content.res.Resources;
 import android.graphics.Color;
 import android.support.constraint.ConstraintLayout;
 import android.support.v7.app.AppCompatActivity;
@@ -23,13 +24,19 @@ public class PalleteActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         setTitle("Pallete Activity");
 
-        final ConstraintLayout constraintLayout = findViewById(R.id.layout);
+        Resources res = getResources();
+        final String[] colors = res.getStringArray(R.array.colorList);
+        final String[] displayList = res.getStringArray(R.array.displayList);
+
+        //final ConstraintLayout constraintLayout = findViewById(R.id.layout);
 
         Spinner spinner = findViewById(R.id.spinner);
 
-        final List<String> colorList = Arrays.asList("white", "blue", "red", "green", "yellow", "magenta", "purple", "teal", "cyan", "darkgray");
+        //final List<String> colorList = Arrays.asList("white", "blue", "red", "green", "yellow", "magenta", "purple", "teal", "cyan", "darkgray");
 
-        final ColorAdapter colorAdapter = new ColorAdapter(this, colorList);
+
+
+        final ColorAdapter colorAdapter = new ColorAdapter(this, colors, displayList);
 
         spinner.setAdapter(colorAdapter);
         spinner.setSelection(0, false);
@@ -45,7 +52,7 @@ public class PalleteActivity extends AppCompatActivity {
                 Intent intent = new Intent(PalleteActivity.this, CanvasActivity.class);
 
                 // define intent
-                intent.putExtra("color",  colorList.get(position));
+                intent.putExtra("message",  colors[position]);
 
                 // start activity
                 startActivity(intent);

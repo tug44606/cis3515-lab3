@@ -1,6 +1,7 @@
 package com.temple.edu.coloractivity;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.constraint.ConstraintLayout;
@@ -14,9 +15,11 @@ public class CanvasActivity extends AppCompatActivity {
         setContentView(R.layout.activity_canvas);
         setTitle("Canvas Activity");
 
+        final Intent rIntent = getIntent();
+
         final ConstraintLayout constraintLayout = findViewById(R.id.canvasLayout);
 
 
-        constraintLayout.setBackgroundColor(Color.parseColor(getIntent().getStringExtra("color")));
+        constraintLayout.setBackgroundColor(Color.parseColor(rIntent.getStringExtra("message")));
     }
 }
