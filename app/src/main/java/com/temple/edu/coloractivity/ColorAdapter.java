@@ -46,13 +46,12 @@ public class ColorAdapter extends BaseAdapter {
             view = new TextView(c);
         }
 
-        String setColorText = displayList[position];
-        String setColorBG = colorList[position];
 
+        view.setText(displayList[position]);
+        view.setTextColor(Color.BLACK);
+        view.setTextSize(20);
 
-        view.setText(setColorText);
-        view.setBackgroundColor(Color.parseColor(setColorBG));
-
+        view.setBackgroundColor(Color.parseColor(colorList[position]));
         return view;
     }
 }
